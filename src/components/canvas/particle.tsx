@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
+import { loadSlim } from "@tsparticles/slim";
 import { Box } from "@material-ui/core";
 
-const particleOptions = require('./particlesjs-config.json');
+
+const particleOptions = require('./particlesjs-config.json'); // eslint-disable-line  @typescript-eslint/no-var-requires
 const BGParticles = () => {
 	const [init, setInit] = useState(false);
 

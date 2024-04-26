@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-import { Container, Grid, makeStyles } from '@material-ui/core';
+import React, { useEffect, useState } from 'react';
+import { Box, Container, Grid, Slide, makeStyles } from '@material-ui/core';
 import { Selector } from './selector'
 import WorkplaceInfo from '../../classes/workplaceInfo';
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
-
-
 
 
 const styles = makeStyles({
@@ -17,11 +15,8 @@ const styles = makeStyles({
         borderRadius: '10px'
     }
 })
-
-interface SelectorProps {
-    workplacesInfo: WorkplaceInfo[];
-}
-
+// clickHandler is MouseEventHandler but typescript is fucky
+// eslint-disable-next-line  @typescript-eslint/ban-types 
 function selectorGridItem(workplacesInfo: WorkplaceInfo, selectedWorkspaceName: string, clickHandler?: Function) {
     return <Grid item key={workplacesInfo.name}>
         <Selector
@@ -32,9 +27,37 @@ function selectorGridItem(workplacesInfo: WorkplaceInfo, selectedWorkspaceName: 
     </Grid>
 }
 
-const PlacesWorked: React.FC<SelectorProps> = ({ workplacesInfo }) => {
+interface AnimatedMarkdownRendererProps {
+    workplaceInfo: WorkplaceInfo;
+}
+
+const AnimatedMarkdownRenderer: React.FC<AnimatedMarkdownRendererProps> = ({ workplaceInfo }) => {
+    const [displayed, setDisplayed] = useState(false);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => { setDisplayed(true) }, 200)
+        return () => { setDisplayed(false); clearTimeout(timeout) }
+    }, [workplaceInfo])
+
+    return (
+        <Slide direction="up" in={displayed} mountOnEnter unmountOnExit timeout={{ enter: 200, exit: 0 }}>
+            <Box>
+                <MarkdownRenderer markdownFile={workplaceInfo.infoFile} backgroundColor='rgb(253 245 230 / 67%)' />
+            </Box>
+        </Slide>
+    )
+}
+
+interface PlacesWorkedProps {
+    workplacesInfo: WorkplaceInfo[];
+}
+
+const PlacesWorked: React.FC<PlacesWorkedProps> = ({ workplacesInfo }) => {
+
     const style = styles()
+    // States
     const [workplaceSelected, setWorkplaceSelected] = useState(workplacesInfo[0]);
+
 
     function changeSelectedWorkplace(_: React.MouseEvent<HTMLButtonElement, MouseEvent>, workplaceInfo: WorkplaceInfo) {
         setWorkplaceSelected(workplaceInfo)
@@ -51,11 +74,7 @@ const PlacesWorked: React.FC<SelectorProps> = ({ workplacesInfo }) => {
                         selectorGridItem(workplaceInfo, workplaceSelected.name, changeSelectedWorkplace))}
                 </Grid>
             </Container>
-
-            <MarkdownRenderer
-                markdownFile={workplaceSelected.infoFile}
-                backgroundColor='rgb(253 245 230 / 67%)'>
-            </MarkdownRenderer>
+            <AnimatedMarkdownRenderer workplaceInfo={workplaceSelected} />
 
 
         </React.Fragment >
