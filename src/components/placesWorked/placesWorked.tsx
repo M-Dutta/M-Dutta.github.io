@@ -52,7 +52,10 @@ const PlacesWorked: React.FC<SelectorProps> = ({ workplacesInfo }) => {
                 </Grid>
             </Container>
 
-            <MarkdownRenderer markdownFile={workplaceSelected.infoFile}></MarkdownRenderer>
+            <MarkdownRenderer
+                markdownFile={workplaceSelected.infoFile}
+                backgroundColor='rgb(253 245 230 / 67%)'>
+            </MarkdownRenderer>
 
 
         </React.Fragment >
