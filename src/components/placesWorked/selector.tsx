@@ -9,7 +9,6 @@ interface SelectorProps {
     // clickHandler is MouseEventHandler but typescript is fucky 
     // eslint-disable-next-line  @typescript-eslint/ban-types 
     clickHandler?: Function; 
-    
 }
 
 
