@@ -6,7 +6,9 @@ import WorkplaceInfo from '../../classes/workplaceInfo';
 interface SelectorProps {
     workplacesInfo: WorkplaceInfo;
     selectedWorkspaceName: string;
-    clickHandler?: Function;
+    // clickHandler is MouseEventHandler but typescript is fucky 
+    // eslint-disable-next-line  @typescript-eslint/ban-types 
+    clickHandler?: Function; 
 }
 
 
