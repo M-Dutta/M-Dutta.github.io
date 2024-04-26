@@ -8,14 +8,15 @@
 		"position": "",
 		"repeat": "",
 		"size": "",
-		"opacity": 0
+		"opacity": 1
 	},
 	"backgroundMask": {
 		"composite": "destination-out",
 		"cover": {
 			"color": {
 				"value": "#fff"
-			}
+			},
+			"opacity": 1
 		},
 		"enable": false
 	},
@@ -24,7 +25,7 @@
 		"zIndex": -1
 	},
 	"detectRetina": true,
-	"fpsLimit": 0,
+	"fpsLimit": 120,
 	"infection": {
 		"cure": false,
 		"delay": 0,
@@ -441,7 +442,7 @@
 				"factor": 1000
 			},
 			"limit": 0,
-			"value": 50
+			"value": 150
 		},
 		"opacity": {
 			"random": {
