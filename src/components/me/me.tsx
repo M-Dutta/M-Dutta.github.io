@@ -27,19 +27,23 @@ const Me: React.FC<Props> = ({ photoFile, contentFile }) => {
     const style = styles()
 
     return (
-        <Container>
-            <Grid container>
-                <Grid item>
-                    <Container ><img src={photoFile} className={style.portrait}></img></Container>
-                </Grid>
-                <Grid item maxWidth='sm'>
-                    <Grid item>
-                        <MarkdownRenderer header="Hi, I'm Mishuk!" markdownFile={contentFile}></MarkdownRenderer>
-                    </Grid>
 
+        <Grid container>
+            <Grid item>
+                <Container><img src={photoFile} className={style.portrait}></img></Container>
+            </Grid>
+            <Grid item maxWidth='sm'>
+                <Grid item>
+                    <MarkdownRenderer header="Hi, I'm Mishuk!"
+                        markdownFile={contentFile}
+                        backgroundColor='rgb(155 194 211 / 55%)'
+                    >
+                    </MarkdownRenderer>
                 </Grid>
-            </Grid >
-        </Container>
+
+            </Grid>
+        </Grid >
+
     );
 }
 
