@@ -16,7 +16,7 @@ const Selector: React.FC<SelectorProps> = ({ workplacesInfo, selectedWorkspaceNa
 
     useEffect(() => {
         setSelected(workplacesInfo.name === selectedWorkspaceName)
-    });
+    }, [workplacesInfo, selectedWorkspaceName]);
 
     return (
         <Button name={workplacesInfo.name}
