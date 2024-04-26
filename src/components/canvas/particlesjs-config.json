@@ -1,9 +1,5 @@
 {
 	"autoPlay": true,
-	"fullScreen": {
-		"enable": true,
-		"zIndex": 1
-	},
 	"background": {
 		"color": {
 			"value": "#ffffff"
@@ -19,12 +15,17 @@
 		"cover": {
 			"color": {
 				"value": "#fff"
-			}
+			},
+			"opacity": 1
 		},
 		"enable": false
 	},
+	"fullScreen": {
+		"enable": true,
+		"zIndex": -1
+	},
 	"detectRetina": true,
-	"fpsLimit": 0,
+	"fpsLimit": 120,
 	"infection": {
 		"cure": false,
 		"delay": 0,
@@ -254,7 +255,7 @@
 					"enable": false,
 					"minimumValue": 0.1
 				},
-				"value": 2
+				"value": 1
 			},
 			"vertical": {
 				"random": {
@@ -441,7 +442,7 @@
 				"factor": 1000
 			},
 			"limit": 0,
-			"value": 100
+			"value": 150
 		},
 		"opacity": {
 			"random": {
