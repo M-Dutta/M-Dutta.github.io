@@ -1,12 +1,13 @@
 import WorkplaceInfo from './classes/workplaceInfo';
 
 /* eslint-disable  @typescript-eslint/no-var-requires */
-const me_md = require("./contentFiles/me.md")
-const toast_md = require("./contentFiles/toast.md")
-const revel_md = require("./contentFiles/revel.md")
-const equifax_md = require("./contentFiles/equifax.md")
-const skillset_md = require("./contentFiles/skillset.md")
-const portrait = require("./contentFiles/portrait.jpg")
+const staticFolder = "./static/contentFiles"
+const me_md = require(`${staticFolder}/me.md`)
+const toast_md = require(`${staticFolder}/toast.md`)
+const revel_md = require(`${staticFolder}/revel.md`)
+const equifax_md = require(`${staticFolder}/equifax.md`)
+const skillset_md = require(`${staticFolder}/skillset.md`)
+const portrait = require(`${staticFolder}/me.jpg`)
 /* eslint-enable  @typescript-eslint/no-var-requires */
 
 const toastInfo = new WorkplaceInfo('Toast', toast_md)
