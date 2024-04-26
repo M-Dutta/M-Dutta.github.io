@@ -4,18 +4,20 @@ import { Container, makeStyles } from '@material-ui/core';
 
 interface Props {
     markdownFile: string;
-    header: string;
+    header?: string;
 }
 
 const styles = makeStyles({
+    header: {
+        textAlign: 'start',
+        fontFamily: 'monospace !important',
+    },
     markdown: {
         textAlign: 'start',
         fontFamily: 'monospace',
         backgroundColor: 'whitesmoke',
-        paddingTop: '10px',
-        paddingBottom: '10px',
-        paddingRight: '25px',
-        borderRadius: '10px'
+        padding: '10px 25px 10px 25px',
+        borderRadius: '25px'
     }
 })
 
@@ -23,18 +25,20 @@ const MarkdownRenderer: React.FC<Props> = ({ markdownFile, header }) => {
     const style = styles()
     const [mdContent, setMarkdownContent] = useState('');
     useEffect(() => {
-        ;
         fetch(markdownFile).then(response => { return response.text() }).then(text => setMarkdownContent(text))
     })
 
 
     return (
-        <Container >
-            <Container style={{ textAlign: 'start' }} ><h2>{header}</h2></Container>
+        <React.Fragment>
+            
+            <Container style={{ textAlign: 'start' }}>
+                <h2 className={style.header}>{header}</h2>
+            </Container>
             <Container>
                 <Markdown children={mdContent} className={style.markdown} />
             </Container>
-        </Container>
+        </React.Fragment>
     );
 }
 
