@@ -1,12 +1,11 @@
 import './App.css';
+import { Container, Box } from '@material-ui/core';
+import Me from './components/me/me'
 import SkillBlock from './components/skillBlock/skillBlock'
 import PlacesWorked from './components/placesWorked/placesWorked'
-import Me from './components/me/me'
-import { Container, Box } from '@material-ui/core';
-import { skillset_md, me_md, portrait, toastInfo, revelInfo, equifaxInfo, } from './constants'
+import { skillset_md, me_md, portrait, toastInfo, revelInfo, equifaxInfo } from './constants'
 
-function App() {
-
+const App = () => {
   return (
     <Container className="Portfolio">
       <Box style={{ marginTop: '30px' }}></Box>
@@ -18,6 +17,7 @@ function App() {
         <PlacesWorked workplacesInfo={[toastInfo, revelInfo, equifaxInfo]}></PlacesWorked>
       </Container>
     </Container>
+
   );
 }
 
