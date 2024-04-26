@@ -12,8 +12,8 @@ interface SelectorProps {
 
 const Selector: React.FC<SelectorProps> = ({ workplacesInfo, selectedWorkspaceName, clickHandler }) => {
     const [selected, setSelected] = useState(workplacesInfo.name === selectedWorkspaceName) // TODO: Use this to underline
-    const style = { fontFamily: 'monospace', fontWeight: 'bold', textDecoration: selected? 'underline': null} // TODO: Use this to underline
-    
+    const style = { fontFamily: 'monospace', fontWeight: 'bold', textDecoration: selected ? 'underline' : 'None' }
+
     useEffect(() => {
         setSelected(workplacesInfo.name === selectedWorkspaceName)
     });
@@ -21,7 +21,7 @@ const Selector: React.FC<SelectorProps> = ({ workplacesInfo, selectedWorkspaceNa
     return (
         <Button name={workplacesInfo.name}
             onClick={(event) => clickHandler ? clickHandler(event, workplacesInfo) : null}
-            variant='text' size='medium' style={{ fontFamily: 'monospace', fontWeight: 'bold' }}>
+            variant='text' size='medium' style={style}>
             {workplacesInfo.name}
         </Button>
     );

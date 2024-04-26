@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Container, Grid, makeStyles } from '@material-ui/core';
 import { Selector } from './selector'
 import WorkplaceInfo from '../../classes/workplaceInfo';
@@ -40,10 +40,6 @@ const PlacesWorked: React.FC<SelectorProps> = ({ workplacesInfo }) => {
         setWorkplaceSelected(workplaceInfo)
     }
 
-    useEffect(() => {
-        console.log(workplaceSelected.name);
-    }, [workplaceSelected])
-
     return (
         <React.Fragment>
             <Container className={style.header}>
@@ -55,6 +51,7 @@ const PlacesWorked: React.FC<SelectorProps> = ({ workplacesInfo }) => {
                         selectorGridItem(workplaceInfo, workplaceSelected.name, changeSelectedWorkplace))}
                 </Grid>
             </Container>
+
             <MarkdownRenderer markdownFile={workplaceSelected.infoFile}></MarkdownRenderer>
 
 
