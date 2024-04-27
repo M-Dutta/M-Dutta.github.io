@@ -4,13 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import BGParticles from './components/canvas/particle'
+import { SideBar } from './components/sideBar/sideBar';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <SideBar/>
+      <App />
     <BGParticles />
   </React.StrictMode>
 

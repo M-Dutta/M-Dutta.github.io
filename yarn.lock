@@ -2007,6 +2007,11 @@
   resolved "https://registry.yarnpkg.com/@popperjs/core/-/core-2.11.8.tgz#6b79032e760a0899cd4204710beede972a3a185f"
   integrity sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==
 
+"@reacticons/ionicons@^7.1.0":
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/@reacticons/ionicons/-/ionicons-7.1.0.tgz#b8d9ebfe68c77d8feb0d484f19f07438a4b36606"
+  integrity sha512-hun4aeMnEyQ2qwmCB8TwNoseHLS1uj3EYuxJhEWkKaxBnyFtQ8HPqqS+HmNYiVBZu6/IeIFESScccdFcb34iqQ==
+
 "@rollup/plugin-babel@^5.2.0":
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-babel/-/plugin-babel-5.3.1.tgz#04bc0608f4aa4b2e4b1aebf284344d0f68fda283"

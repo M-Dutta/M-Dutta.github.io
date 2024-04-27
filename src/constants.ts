@@ -8,6 +8,7 @@ const revel_md = require(`${staticFolder}/revel.md`)
 const equifax_md = require(`${staticFolder}/equifax.md`)
 const skillset_md = require(`${staticFolder}/skillset.md`)
 const portrait = require(`${staticFolder}/me.jpg`)
+const resume = require(`${staticFolder}/Mishuk-Dutta-Resume.pdf`)
 /* eslint-enable  @typescript-eslint/no-var-requires */
 
 const toastInfo = new WorkplaceInfo('Toast', toast_md)
@@ -17,7 +18,7 @@ const equifaxInfo = new WorkplaceInfo('Equifax', equifax_md)
 
 
 export {
-    me_md, toast_md, skillset_md,
+    me_md, toast_md, skillset_md, resume,
     portrait,
     toastInfo, revelInfo, equifaxInfo
 }
