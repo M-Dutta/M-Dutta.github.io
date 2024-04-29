@@ -31,6 +31,7 @@ interface AnimatedMarkdownRendererProps {
     workplaceInfo: WorkplaceInfo;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars 
 const AnimatedMarkdownRenderer: React.FC<AnimatedMarkdownRendererProps> = ({ workplaceInfo }) => {
     const [displayed, setDisplayed] = useState(false);
 
