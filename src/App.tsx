@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import { Container, Box } from '@material-ui/core';
 import Me from './components/me/me'
 import SkillBlock from './components/skillBlock/skillBlock'
@@ -17,8 +17,9 @@ const App = () => {
         <PlacesWorked workplacesInfo={[toastInfo, revelInfo, equifaxInfo]}></PlacesWorked>
       </Container>
     </Container>
+    
 
   );
 }
 
-export default App;
+export default App

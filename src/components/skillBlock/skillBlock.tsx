@@ -23,7 +23,7 @@ const SkillBlock: React.FC<Props> = ({ contentFile }) => {
     return (
         <React.Fragment>
             <Container className={style.header}>
-                <h1>Tech I've worked with</h1>
+                <h1>Tech I have worked with</h1>
             </Container>
             <MarkdownRenderer markdownFile={contentFile} backgroundColor='rgb(123 133 134 / 32%)'></MarkdownRenderer>
         </React.Fragment>

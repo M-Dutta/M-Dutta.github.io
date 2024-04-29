@@ -8,7 +8,7 @@ interface SelectorProps {
     selectedWorkspaceName: string;
     // clickHandler is MouseEventHandler but typescript is fucky 
     // eslint-disable-next-line  @typescript-eslint/ban-types 
-    clickHandler?: Function; 
+    clickHandler?: Function;
 }
 
 
@@ -22,6 +22,7 @@ const Selector: React.FC<SelectorProps> = ({ workplacesInfo, selectedWorkspaceNa
 
     return (
         <Button name={workplacesInfo.name}
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
             onClick={(event) => clickHandler ? clickHandler(event, workplacesInfo) : null}
             variant='text' size='medium' style={style}>
             {workplacesInfo.name}

@@ -66,7 +66,7 @@ const PlacesWorked: React.FC<PlacesWorkedProps> = ({ workplacesInfo }) => {
     return (
         <React.Fragment>
             <Container className={style.header}>
-                <h1>Places I've worked at</h1>
+                <h1>Places I have worked at</h1>
             </Container>
             <Container>
                 <Grid container>
