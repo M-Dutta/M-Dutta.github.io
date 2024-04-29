@@ -74,7 +74,7 @@ const PlacesWorked: React.FC<PlacesWorkedProps> = ({ workplacesInfo }) => {
                         selectorGridItem(workplaceInfo, workplaceSelected.name, changeSelectedWorkplace))}
                 </Grid>
             </Container>
-            <AnimatedMarkdownRenderer workplaceInfo={workplaceSelected} />
+            <MarkdownRenderer markdownFile={workplaceSelected.infoFile} backgroundColor='rgb(253 245 230 / 67%)' />
 
 
         </React.Fragment >
