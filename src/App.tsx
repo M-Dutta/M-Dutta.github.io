@@ -4,6 +4,7 @@ import Me from './components/me/me'
 import SkillBlock from './components/skillBlock/skillBlock'
 import PlacesWorked from './components/placesWorked/placesWorked'
 import { skillset_md, me_md, portrait, toastInfo, revelInfo, equifaxInfo } from './constants'
+import { SideBar } from './components/sideBar/sideBar';
 
 const App = () => {
   return (
@@ -16,8 +17,8 @@ const App = () => {
         <Box style={{ marginTop: '30px' }}></Box>
         <PlacesWorked workplacesInfo={[toastInfo, revelInfo, equifaxInfo]}></PlacesWorked>
       </Container>
+      <SideBar></SideBar>
     </Container>
-    
 
   );
 }
