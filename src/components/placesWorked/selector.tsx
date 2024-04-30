@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from '@mui/material/Button';
 import WorkplaceInfo from '../../classes/workplaceInfo';
+import { Grid } from '@material-ui/core';
 
 
 interface SelectorProps {
@@ -11,6 +12,17 @@ interface SelectorProps {
     clickHandler?: Function;
 }
 
+// clickHandler is MouseEventHandler but typescript is fucky
+// eslint-disable-next-line @typescript-eslint/ban-types, @typescript-eslint/no-unused-vars 
+function selectorGridItem(workplacesInfo: WorkplaceInfo, selectedWorkspaceName: string, clickHandler?: Function) {
+    return <Grid item key={workplacesInfo.name}>
+        <Selector
+            workplacesInfo={workplacesInfo}
+            selectedWorkspaceName={selectedWorkspaceName}
+            clickHandler={clickHandler}>
+        </Selector>
+    </Grid>
+}
 
 const Selector: React.FC<SelectorProps> = ({ workplacesInfo, selectedWorkspaceName, clickHandler }) => {
     const [selected, setSelected] = useState(workplacesInfo.name === selectedWorkspaceName) // TODO: Use this to underline

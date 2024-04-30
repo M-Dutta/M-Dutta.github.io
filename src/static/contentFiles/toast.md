@@ -1,11 +1,5 @@
-* Significantly improved in-house development & productivity tools for orchestrating Docker-based service stacks with 350+ active engineers (by 60%) and developed extended features for it.  
+I worked in a team responsible for developer tools and infrastructure, creating services and tools that act as a force multiplier for the entire R&D engineering org.
 
-* Led multiple cross-team initiatives to create a new productivity tool that scales and speeds up development and testing infrastructure (AWS), resulting in a 100x capacity increase, 50% development time reduction, and a minimum $200,000 cost savings a year. (Potentially >$450,000 after full adoption)  
+I led cross-team initiatives to overhaul tools + infrastructure that have resulted in a 50% reduction in development time and at least $200,000 in cost reduction after early adoption. (Potentially >$750,000 after full adoption.)  
 
-* Modernized Toast’s testing Cloud Infrastructure and CI/CD pipelines using Terraform, Ansible, Packer, and re-useable Jenkins libraries, reducing E2E testing time by 25% and increasing E2E test adoption.  
-
-* Built observability dashboards using Splunk and Datadog to monitor tools and container health, track service logs, and alert users during degradation.  
-
-* Implemented Gradle tools to verify microservice’s API specs as a part of automation using open-source projects and contributed to some of them (e.g. OpenApi-diff).  
-
-* Developed microservices using REST protocol and messaging queue (pulsar) that tracked internal git metrics. 
+I have also contributed to open-source projects (e.g `OpenApi-diff`) as part of our open-source tooling adoption.
