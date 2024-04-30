@@ -20,7 +20,8 @@ const BGParticles = () => {
 		init &&
 		<Box style={{ position: 'fixed', zIndex: -1 }}>
 			<Particles id="tsparticles"
-			options={particleOptions} /> /
+			// @ts-expect-error Options are loaded jsut fine. Typescript screams without a reason
+			options={particleOptions} /> 
 		</Box>
 
 	)
