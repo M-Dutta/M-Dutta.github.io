@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, makeStyles } from '@material-ui/core';
+import { Container } from '@mui/material';
+import { makeStyles } from '@mui/styles'
 import WorkplaceInfo from '../../classes/workplaceInfo';
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
 import Accordion from '@mui/material/Accordion';

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container, makeStyles } from '@material-ui/core';
+import { Container } from '@mui/material';
+import { makeStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
+
 
 interface Props {
     photoFile: string;

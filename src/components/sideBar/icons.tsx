@@ -1,4 +1,5 @@
-import { IconButton, makeStyles } from '@material-ui/core';
+import { IconButton } from '@mui/material';
+import { makeStyles } from '@mui/styles'
 import IonIcon from '@reacticons/ionicons';
 import { resume } from '../../constants'
 const linkedInLink = 'https://www.linkedin.com/in/mishukdutta/'

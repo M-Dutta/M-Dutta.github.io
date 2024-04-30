@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
-import { Box } from "@material-ui/core";
+import { Box } from "@mui/material";
 import particleOptions from './particlesjs-config.json'
 
 const BGParticles = () => {
