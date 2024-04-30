@@ -1,15 +1,12 @@
 import WorkplaceInfo from './classes/workplaceInfo';
 
-/* eslint-disable  @typescript-eslint/no-var-requires */
-const staticFolder = "./static/contentFiles"
-const me_md = require(`${staticFolder}/me.md`)
-const toast_md = require(`${staticFolder}/toast.md`)
-const revel_md = require(`${staticFolder}/revel.md`)
-const equifax_md = require(`${staticFolder}/equifax.md`)
-const skillset_md = require(`${staticFolder}/skillset.md`)
-const portrait = require(`${staticFolder}/me.jpg`)
-const resume = require(`${staticFolder}/Mishuk-Dutta-Resume.pdf`)
-/* eslint-enable  @typescript-eslint/no-var-requires */
+import me_md from './static/contentFiles/me.md'
+import toast_md from './static/contentFiles/toast.md'
+import revel_md from './static/contentFiles/revel.md'
+import equifax_md from './static/contentFiles/equifax.md'
+import skillset_md from './static/contentFiles/skillset.md'
+import portrait from './static/contentFiles/me.jpg'
+import resume from './static/contentFiles/Mishuk-Dutta-Resume.pdf'
 
 const toastInfo = new WorkplaceInfo('Toast', toast_md)
 const revelInfo = new WorkplaceInfo('Revel', revel_md)

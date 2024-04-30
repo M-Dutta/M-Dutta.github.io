@@ -1,52 +1,28 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Container, Grid, Slide, makeStyles } from '@material-ui/core';
-import { Selector } from './selector'
+import React from 'react';
+import { Container, makeStyles } from '@material-ui/core';
 import WorkplaceInfo from '../../classes/workplaceInfo';
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
-const styles = makeStyles({
+const styler = makeStyles({
     header: {
         textAlign: 'start',
         fontFamily: 'monospace'
     },
-    rootStyle: {
-        textAlign: 'start',
-        borderRadius: '10px'
-    }
+    accordionRoot: {
+        backgroundColor: "#fff0 !important",
+        '&::before': {
+            height: '0 !important'
+        }
+    },
+    accordionSummary: { backgroundColor: "#f5f5dc99! important", marginTop: '10px !important', minHeight: 'unset !important' },
+    accordionDetails: { margin: '0', padding: '0 0 10px 0 !important' }
 })
-// clickHandler is MouseEventHandler but typescript is fucky
-// eslint-disable-next-line  @typescript-eslint/ban-types 
-function selectorGridItem(workplacesInfo: WorkplaceInfo, selectedWorkspaceName: string, clickHandler?: Function) {
-    return <Grid item key={workplacesInfo.name}>
-        <Selector
-            workplacesInfo={workplacesInfo}
-            selectedWorkspaceName={selectedWorkspaceName}
-            clickHandler={clickHandler}>
-        </Selector>
-    </Grid>
-}
 
-interface AnimatedMarkdownRendererProps {
-    workplaceInfo: WorkplaceInfo;
-}
-
-const AnimatedMarkdownRenderer: React.FC<AnimatedMarkdownRendererProps> = ({ workplaceInfo }) => {
-    const [displayed, setDisplayed] = useState(false);
-
-    useEffect(() => {
-        const timeout = setTimeout(() => { setDisplayed(true) }, 200)
-        return () => { setDisplayed(false); clearTimeout(timeout) }
-    }, [workplaceInfo])
-
-    return (
-        <Slide direction="up" in={displayed} mountOnEnter unmountOnExit timeout={{ enter: 200, exit: 0 }}>
-            <Box>
-                <MarkdownRenderer markdownFile={workplaceInfo.infoFile} backgroundColor='rgb(253 245 230 / 67%)' />
-            </Box>
-        </Slide>
-    )
-}
 
 interface PlacesWorkedProps {
     workplacesInfo: WorkplaceInfo[];
@@ -54,28 +30,26 @@ interface PlacesWorkedProps {
 
 const PlacesWorked: React.FC<PlacesWorkedProps> = ({ workplacesInfo }) => {
 
-    const style = styles()
-    // States
-    const [workplaceSelected, setWorkplaceSelected] = useState(workplacesInfo[0]);
-
-
-    function changeSelectedWorkplace(_: React.MouseEvent<HTMLButtonElement, MouseEvent>, workplaceInfo: WorkplaceInfo) {
-        setWorkplaceSelected(workplaceInfo)
-    }
+    const styles = styler()
 
     return (
         <React.Fragment>
-            <Container className={style.header}>
-                <h1>Places I've worked at</h1>
+            <Container className={styles.header}>
+                <h1>Places I have worked at</h1>
             </Container>
-            <Container>
-                <Grid container>
-                    {workplacesInfo.map(workplaceInfo =>
-                        selectorGridItem(workplaceInfo, workplaceSelected.name, changeSelectedWorkplace))}
-                </Grid>
-            </Container>
-            <AnimatedMarkdownRenderer workplaceInfo={workplaceSelected} />
-
+            {
+                workplacesInfo.map(workplaceInfo =>
+                    <Accordion disableGutters elevation={0} className={styles.accordionRoot} key={workplaceInfo.name}>
+                        <AccordionSummary expandIcon={<ExpandMoreIcon />} className={styles.accordionSummary}>
+                            <h3 style={{ margin: '0' }}> {workplaceInfo.name}</h3>
+                        </AccordionSummary>
+                        <AccordionDetails className={styles.accordionDetails}>
+                            <MarkdownRenderer markdownFile={workplaceInfo.infoFile}
+                                backgroundColor='rgb(253 245 230 / 67%)' />
+                        </AccordionDetails>
+                    </Accordion>
+                )
+            }
 
         </React.Fragment >
     );

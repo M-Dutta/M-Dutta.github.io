@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { Box } from "@material-ui/core";
+import particleOptions from './particlesjs-config.json'
 
-
-const particleOptions = require('./particlesjs-config.json'); // eslint-disable-line  @typescript-eslint/no-var-requires
 const BGParticles = () => {
 	const [init, setInit] = useState(false);
 
@@ -14,13 +13,14 @@ const BGParticles = () => {
 			await loadSlim(engine);
 		}).then(() => {
 			setInit(true);
-		});
+		}).catch(() => console.warn("Unable to load particles json config"));
 	}, []);
 	// Particles component isn't respecting "zIndex" from the .json file. Box around it and force the z-index
 	return (
 		init &&
 		<Box style={{ position: 'fixed', zIndex: -1 }}>
-			<Particles id="tsparticles" options={particleOptions} />
+			<Particles id="tsparticles"
+			options={particleOptions} /> /
 		</Box>
 
 	)

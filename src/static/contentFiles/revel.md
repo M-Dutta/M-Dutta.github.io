@@ -1,15 +1,3 @@
-Led the design and implementation of Service Mesh, Discovery, and load balancing Infrastructure using Hashicorp Consul and open-source Fabio. 
+I lead a team of engineers on projects like overhauling Revel's **Authentication/Authorization**, implementing **Service Discovery**, and streamlining legacy data handlers to boost performance. 
 
-Led the conversion of Revels’ Web and IOS application’s User, API, and App Authentication and Authorization to token-based auth by following OAuth2.0 protocol (via IdP Auth0.) 
-
-Developed & deployed numerous REST API-based microservices (running Django/Flask/Express.js/React) in a distributed environment (AWS ECS). 
-
-Developed and deployed  
-
-Single Page Applications (SPAs) using AWS CloudFront, Route53 and S3. 
-
-Serverless microservices using AWS Lambda, API-Gateway, DynamoDB, etc. 
-
-RESTful microservices using docker, ECS, EC2 load-balancer, Route53, etc. 
-
-Designed and modernized legacy data stream handlers to handle high-volume data transactions using data frames, improving performance by up to 1500%. 
+Before I took the role as a lead engineer, I worked with microservices, SPAs, mono-repos, CI/CD Pipelines, and IaC for production deployment via AWS services.

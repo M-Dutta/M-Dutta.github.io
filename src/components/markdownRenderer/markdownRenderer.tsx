@@ -27,6 +27,8 @@ const MarkdownRenderer: React.FC<Props> = ({ markdownFile, header, backgroundCol
     const [mdContent, setMarkdownContent] = useState('');
     useEffect(() => {
         fetch(markdownFile).then(response => { return response.text() }).then(text => setMarkdownContent(text))
+        .catch( () => console.error("markdown content changing loading error")
+        )
     })
 
     return (
@@ -37,7 +39,7 @@ const MarkdownRenderer: React.FC<Props> = ({ markdownFile, header, backgroundCol
             </Container>
             <Container>
                 <Box className={style.markdown} style={{ backgroundColor: backgroundColor ? backgroundColor : 'whitesmoke' }}>
-                    <Markdown children={mdContent}/>
+                    <Markdown>{mdContent}</Markdown>
                 </Box>
             </Container>
         </React.Fragment >
