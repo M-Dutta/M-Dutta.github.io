@@ -31,7 +31,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      artifact_name: "build"
+      
       
 
     # Specify runner + deployment step
@@ -39,8 +39,9 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4 # or specific "vX.X.X" version tag for this action
-        
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: "build"
 
 
 
