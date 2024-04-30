@@ -20,7 +20,7 @@ jobs:
           yarn build
 
       - name: Deploy
-        uses: M-Dutta/M-dutta.github.io
+        uses: M-Dutta/M-dutta.github.io@v1.0
         with:
           branch: gh-pages
           folder: dist
