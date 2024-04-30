@@ -1,0 +1,26 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches: ["main", deployment-test]
+  pull_request:
+    branches: ["main", deployment-test]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Install and build
+        run: |
+          yarn install 
+          yarn build
+
+      - name: Deploy
+        uses: M-Dutta/M-dutta.github.io
+        with:
+          branch: gh-pages
+          folder: dist
