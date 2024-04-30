@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Box, Container, Slide, makeStyles } from '@material-ui/core';
+import React from 'react';
+import { Container, makeStyles } from '@material-ui/core';
 import WorkplaceInfo from '../../classes/workplaceInfo';
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
 import Accordion from '@mui/material/Accordion';
@@ -23,28 +23,6 @@ const styler = makeStyles({
     accordionDetails: { margin: '0', padding: '0 0 10px 0 !important' }
 })
 
-
-interface AnimatedMarkdownRendererProps {
-    workplaceInfo: WorkplaceInfo;
-}
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars 
-const AnimatedMarkdownRenderer: React.FC<AnimatedMarkdownRendererProps> = ({ workplaceInfo }) => {
-    const [displayed, setDisplayed] = useState(false);
-
-    useEffect(() => {
-        const timeout = setTimeout(() => { setDisplayed(true) }, 200)
-        return () => { setDisplayed(false); clearTimeout(timeout) }
-    }, [workplaceInfo])
-
-    return (
-        <Slide direction="up" in={displayed} mountOnEnter unmountOnExit timeout={{ enter: 200, exit: 0 }}>
-            <Box>
-                <MarkdownRenderer markdownFile={workplaceInfo.infoFile} backgroundColor='rgb(253 245 230 / 67%)' />
-            </Box>
-        </Slide>
-    )
-}
 
 interface PlacesWorkedProps {
     workplacesInfo: WorkplaceInfo[];
