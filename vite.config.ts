@@ -16,7 +16,6 @@ export default defineConfig({
 
 function manualChunks(id: string) {
   if (id.includes("node_modules")) {
-    console.log(`id: ${id}`)
     if (id.includes("@tsparticles")) return "vendor_tsparticles";
     if (id.includes("@mui")) return "vendor_mui";
   }

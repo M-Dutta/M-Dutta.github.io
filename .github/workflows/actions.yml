@@ -50,4 +50,4 @@ jobs:
         run: |
           ls
           yarn add gh-pages
-          yarn gh-pages -d github-pages 
+          yarn gh-pages -d dist
