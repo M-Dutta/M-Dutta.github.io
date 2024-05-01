@@ -20,7 +20,7 @@ const SideBarContainer = styled(Grid)(({ theme }) => ({
 export const SideBar = () => {
     return (
         <Slide in={true} direction='left' timeout={2000}>
-            <Grid component={SideBarContainer} direction='column'>
+            <Grid component={SideBarContainer} >
                 <Grid item>
                     <LinkedInIcon />
                 </Grid>

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Container } from '@mui/material';
 import { makeStyles } from '@mui/styles'
+import { Image } from 'mui-image'
 import Grid from '@mui/material/Grid'
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
+import { Container } from '@mui/material';
 
 
 interface Props {
@@ -15,7 +16,7 @@ const styles = makeStyles({
     },
     portrait: {
         borderRadius: '25%',
-        height: '189px',
+        maxHeight: '220px',
         justifyContent: 'center',
         alignItems: 'center'
     },
@@ -32,11 +33,15 @@ const Me: React.FC<Props> = ({ photoFile, contentFile }) => {
 
         <Grid container>
             <Grid item>
-                <Container><img src={photoFile} className={style.portrait}></img></Container>
+                <Container maxWidth='sm'>
+                    <Image src={photoFile}
+                        className={style.portrait}
+                        duration={300} />
+                </Container>
             </Grid>
             <Grid item maxWidth='sm'>
                 <Grid item>
-                    <MarkdownRenderer header="Hi, I'm Mishuk!"
+                    <MarkdownRenderer
                         markdownFile={contentFile}
                         backgroundColor='rgb(155 194 211 / 55%)'
                     >
