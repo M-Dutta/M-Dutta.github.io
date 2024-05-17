@@ -1,5 +1,9 @@
-I worked in a team responsible for developer tools and infrastructure, creating services and tools that act as a force multiplier for the entire R&D engineering org.
+I worked in a developer platform team, creating the necessary infrastructure and tooling that boosts productivity for the entire R&D engineering org.
 
-I led cross-team initiatives to overhaul tools + infrastructure that have resulted in a 50% reduction in development time and at least $200,000 in cost reduction after early adoption. (Potentially >$750,000 after full adoption.)  
+I've cross-team initiatives to overhaul tools + infrastructure that have resulted in 
+- 50% reduction in development time 
+- Potential to reduce cost by up to 75%
 
-I have also contributed to open-source projects (e.g `OpenApi-diff`) as part of our open-source tooling adoption.
+I'm currently working on building the next generation of Toast's developer portal by adopting open source [backstage.io](https://backstage.io/)
+
+I have also contributed to open-source projects (e.g. [OpenApi-diff](https://github.com/OpenAPITools/openapi-diff)) as part of our open-source tooling adoption.

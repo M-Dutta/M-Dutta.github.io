@@ -6,7 +6,7 @@ import BGParticles from './components/canvas/particle.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
     <BGParticles />
+    <App />
   </React.StrictMode>,
 )

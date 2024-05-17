@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Markdown from 'react-markdown'
-import { Container, makeStyles, Box } from '@material-ui/core';
-
+import { Container, Box } from '@mui/material';
+import { makeStyles } from '@mui/styles'
+import './makdown.css'
 
 interface Props {
     markdownFile: string;
@@ -27,8 +28,8 @@ const MarkdownRenderer: React.FC<Props> = ({ markdownFile, header, backgroundCol
     const [mdContent, setMarkdownContent] = useState('');
     useEffect(() => {
         fetch(markdownFile).then(response => { return response.text() }).then(text => setMarkdownContent(text))
-        .catch( () => console.error("markdown content changing loading error")
-        )
+            .catch(() => console.error("markdown content changing loading error")
+            )
     })
 
     return (
@@ -38,8 +39,9 @@ const MarkdownRenderer: React.FC<Props> = ({ markdownFile, header, backgroundCol
                 <h2 className={style.header}>{header}</h2>
             </Container>
             <Container>
-                <Box className={style.markdown} style={{ backgroundColor: backgroundColor ? backgroundColor : 'whitesmoke' }}>
-                    <Markdown>{mdContent}</Markdown>
+                <Box className={style.markdown} 
+                style={{ backgroundColor: backgroundColor ? backgroundColor : 'whitesmoke' }}>
+                    <Markdown className='className="markdown"'>{mdContent}</Markdown>
                 </Box>
             </Container>
         </React.Fragment >

@@ -1,7 +1,9 @@
 import React from 'react';
-import { Container, makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles'
 import Grid from '@mui/material/Grid'
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
+import { Container } from '@mui/material';
+
 
 interface Props {
     photoFile: string;
@@ -9,17 +11,16 @@ interface Props {
 }
 
 const styles = makeStyles({
-    rootStyle: {
-    },
-    portrait: {
-        borderRadius: '25%',
-        height: '189px',
-        justifyContent: 'center',
-        alignItems: 'center'
-    },
-
     content: {
         textAlign: 'start'
+    },
+    img: {
+        maxHeight: '220px',
+        borderRadius: '25%',
+        position: 'relative',
+        maxWidth: '100%',
+        height: '100%',
+        objectFit: 'cover',
     }
 })
 
@@ -27,17 +28,16 @@ const Me: React.FC<Props> = ({ photoFile, contentFile }) => {
     const style = styles()
 
     return (
-
         <Grid container>
             <Grid item>
-                <Container><img src={photoFile} className={style.portrait}></img></Container>
+                <Container maxWidth='sm' style={{ justifyContent: 'center', alignItems: 'center', display: 'flex' }}>
+                    <img src={photoFile}
+                        className={style.img} />
+                </Container>
             </Grid>
             <Grid item maxWidth='sm'>
                 <Grid item>
-                    <MarkdownRenderer header="Hi, I'm Mishuk!"
-                        markdownFile={contentFile}
-                        backgroundColor='rgb(155 194 211 / 55%)'
-                    >
+                    <MarkdownRenderer markdownFile={contentFile} backgroundColor='rgb(155 194 211 / 55%)'>
                     </MarkdownRenderer>
                 </Grid>
 

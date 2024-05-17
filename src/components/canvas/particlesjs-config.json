@@ -561,8 +561,8 @@
 			}
 		}
 	},
-	"pauseOnBlur": true,
-	"pauseOnOutsideViewport": true,
+	"pauseOnBlur": false,
+	"pauseOnOutsideViewport": false,
 	"responsive": [],
 	"themes": []
 }

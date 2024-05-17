@@ -1,4 +1,5 @@
-import { IconButton, makeStyles } from '@material-ui/core';
+import { IconButton } from '@mui/material';
+import { makeStyles } from '@mui/styles'
 import IonIcon from '@reacticons/ionicons';
 import { resume } from '../../constants'
 const linkedInLink = 'https://www.linkedin.com/in/mishukdutta/'
@@ -8,14 +9,14 @@ const iconStyle = makeStyles({
     resize: {
     },
     linkedInIcon: {
-        color: '#0b73b1'
+        color: '#0b73b1 !important'
     },
     githubIcon: {
-        color: '#24292e',
+        color: '#24292e !important',
 
     },
     resumeIcon: {
-        color: '#793030',
+        color: '#793030 !important',
     }
 
 })

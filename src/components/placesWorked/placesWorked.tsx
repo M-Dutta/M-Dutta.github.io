@@ -1,11 +1,13 @@
 import React from 'react';
-import { Container, makeStyles } from '@material-ui/core';
+import { Container } from '@mui/material';
+import { makeStyles } from '@mui/styles'
 import WorkplaceInfo from '../../classes/workplaceInfo';
 import MarkdownRenderer from '../markdownRenderer/markdownRenderer'
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import HeaderText from '../headersText/headerText';
 
 
 const styler = makeStyles({
@@ -35,7 +37,7 @@ const PlacesWorked: React.FC<PlacesWorkedProps> = ({ workplacesInfo }) => {
     return (
         <React.Fragment>
             <Container className={styles.header}>
-                <h1>Places I have worked at</h1>
+                <HeaderText>{"Places I worked at"}</HeaderText>
             </Container>
             {
                 workplacesInfo.map(workplaceInfo =>
